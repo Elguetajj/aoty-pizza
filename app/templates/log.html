@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block content %}
+
+{% set name= album["name"] %}
+{% set image= album["images"][1]["url"] %}
+{% set id = album["id"] %}
+
+
+<div class="container">
+    <div class="card" style="width: 18rem;">
+        <img id = "image" data-src = {{image}} class="card-img-top" src= {{image}} alt="Card image cap">
+        <div class="card-body">
+        <h5 id = "name"  data-id = "{{id}}" class="card-title">{{name}}</h5>
+        <form>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Rating 💯</label>
+              <select class="form-control" id="rating">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">loved 💖</label>
+                <select class="form-control" id="loved">
+                  <option>0</option>
+                  <option>1</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Review:</label>
+              <textarea class="form-control" id="review" rows="3"></textarea>
+            </div>
+          </form>
+        <a href="#"  id = "log_button" class="btn btn-primary">Log</a>
+        </div>
+    </div>
+</div> 
+
+<script type=text/javascript>
+
+$(function() {
+  $('#log_button').click(function() {
+
+    var rating = document.getElementById("rating").value;
+    var loved = document.getElementById("loved").value;
+    var review = document.getElementById("review").value;
+    var name =  document.getElementById("name").textContent;
+    var image = document.getElementById("image").getAttribute('src');
+    var id =  document.getElementById("name").getAttribute('data-id');
+
+    $.ajax({
+      type: 'POST',
+      data: JSON.stringify({ "id": id, "name": name, "url":image , "rating": rating, "loved": loved, "review": review }),
+      contentType: 'application/json;charset=UTF-8',
+      dataType: "json",
+      success: function(response) {
+        console.log(response);
+      },
+      error : function(xhr) {
+        console.log(xhr);
+      },
+      url: '/log_entry',
+      cache:false
+    });
+  });
+});
+
+
+</script>
+
+{% endblock %}

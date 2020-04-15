@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div class="row">
+  <div class= "col-sm-3">
+    
+  {% for album in albums %}
+
+  {% set name= album["name"] %}
+  {% set image= album["images"][1]["url"] %}
+  {% set id = album["id"] %}
+
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src= {{image}} alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{name}}</h5>
+      <a href="/log?id={{id}}" class="btn btn-primary">Log</a>
+    </div>
+  </div>
+
+  {% endfor %}
+
+  </div>
+</div> 
+
+{% endblock %}
