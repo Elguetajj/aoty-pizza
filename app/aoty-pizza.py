@@ -7,45 +7,47 @@ from datetime import datetime
 app = Flask(__name__)
 
 
-# code = ''
-# token = ''
-# expiration = 0
-# token_timestamp = None
 
-# @app.route('/auth')
-# def auth():
-#     client_id = "26fd557b95a64a33ab3293032169caed"
-#     redirect_url = "http://localhost:5000/callback"
-#     scope = "user-read-recently-played"
-#     return redirect(f"https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={redirect_url}&scope={scope}")
+#------------------------------------------------Beggining of work in progress -----------------------------------------------------------------------
+code = ''
+token = ''
+expiration = 0
+token_timestamp = None
 
-# @app.route('/callback')
-# def callback():
-#     code = request.args.get('code')
-#     response = requests.post("https://accounts.spotify.com/api/token", data= {"grant_type": "authorization_code", "code": code, "redirect_uri": "http://localhost:5000/callback", "client_id":"26fd557b95a64a33ab3293032169caed", "client_secret":"e3f02f59f3464c529808ced058592312"}, headers= {"content-type":"application/x-www-form-urlencoded"})
-#     response = response.json()
-#     token_timestamp = datetime.now()
-#     token = response['access_token']
-#     code = response['refresh_token']
-#     expiration = int(response['expires_in'])
+@app.route('/auth')
+def auth():
+    client_id = "26fd557b95a64a33ab3293032169caed"
+    redirect_url = "http://localhost:5000/callback"
+    scope = "user-read-recently-played"
+    return redirect(f"https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={redirect_url}&scope={scope}")
 
-#     print(f"token:{token}")
-#     print(f"refresh_token:{code}")
-#     print(f"expires_in:{expiration}")
-#     return render_template("home.html")
+@app.route('/callback')
+def callback():
+    code = request.args.get('code')
+    response = requests.post("https://accounts.spotify.com/api/token", data= {"grant_type": "authorization_code", "code": code, "redirect_uri": "http://localhost:5000/callback", "client_id":"26fd557b95a64a33ab3293032169caed", "client_secret":"e3f02f59f3464c529808ced058592312"}, headers= {"content-type":"application/x-www-form-urlencoded"})
+    response = response.json()
+    token_timestamp = datetime.now()
+    token = response['access_token']
+    code = response['refresh_token']
+    expiration = int(response['expires_in'])
 
-# @app.route('/refresh_token')
-# def refresh():
-#     print(code)
-#     time_delta = (datetime.now()-token_timestamp).total_seconds
-#     if code is not '':
-#         if(time_delta >= expiration):
-#             response = requests.post("https://accounts.spotify.com/api/token", data= {"grant_type": "refresh_token", "refresh_token": code, "client_id":"26fd557b95a64a33ab3293032169caed", "client_secret":"e3f02f59f3464c529808ced058592312"}, headers= {"content-type":"application/x-www-form-urlencoded"})
-#         else:
-#             pass 
-#     return render_template("home.html")
+    print(f"token:{token}")
+    print(f"refresh_token:{code}")
+    print(f"expires_in:{expiration}")
+    return render_template("home.html")
 
+@app.route('/refresh_token')
+def refresh():
+    print(code)
+    time_delta = (datetime.now()-token_timestamp).total_seconds
+    if code is not '':
+        if(time_delta >= expiration):
+            response = requests.post("https://accounts.spotify.com/api/token", data= {"grant_type": "refresh_token", "refresh_token": code, "client_id":"26fd557b95a64a33ab3293032169caed", "client_secret":"e3f02f59f3464c529808ced058592312"}, headers= {"content-type":"application/x-www-form-urlencoded"})
+        else:
+            pass 
+    return render_template("home.html")
 
+#----------------------------------------------- End of Work in progress -----------------------------------------------------------------------------
 
 
 user_albums = Albums() 
@@ -82,13 +84,6 @@ def log():
 def log_entry():
     data = json.loads(request.data)
     print(data)
-    # album_id = data['id']
-    # name = data["name"]
-    # image = data["image"]
-    # rating = data["rating"]
-    # loved = data["loved"]
-    # review = data["review"]
-
     user_albums.logAlbum(data)
     return render_template("layout.html")
 

@@ -1,0 +1,104 @@
+-------------------------------------Heapsorter profile:2020-04-15 13:52:58.925783
+5000 elements
+Performance profiling:
+         50420 function calls (7504 primitive calls) in 0.029 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.029    0.029 <string>:1(<module>)
+        1    0.002    0.002    0.029    0.029 heaper.py:18(heapSort)
+50415/7499    0.027    0.000    0.027    0.000 heaper.py:2(heapify)
+        1    0.000    0.000    0.029    0.029 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+Memory profiling:
+Filename: profiler_heaper.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    13     17.6 MiB     17.6 MiB   @profile
+    14                             def profile_heaper():
+    15     17.7 MiB      0.0 MiB       Heaper.heapSort(arr)
+
+
+-------------------------------------Heapsorter profile:2020-04-15 13:57:50.561424
+7000 elements
+Performance profiling:
+         72962 function calls (10504 primitive calls) in 0.042 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.042    0.042 <string>:1(<module>)
+        1    0.002    0.002    0.042    0.042 heaper.py:18(heapSort)
+72957/10499    0.040    0.000    0.040    0.000 heaper.py:2(heapify)
+        1    0.000    0.000    0.042    0.042 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+Memory profiling:
+Filename: profiler_heaper.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    13     18.1 MiB     18.1 MiB   @profile
+    14                             def profile_heaper():
+    15     18.1 MiB      0.0 MiB       Heaper.heapSort(arr)
+
+
+-------------------------------------Heapsorter profile:2020-04-15 13:58:00.765855
+7000 elements
+Performance profiling:
+         73440 function calls (10504 primitive calls) in 0.043 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.043    0.043 <string>:1(<module>)
+        1    0.002    0.002    0.043    0.043 heaper.py:18(heapSort)
+73435/10499    0.040    0.000    0.040    0.000 heaper.py:2(heapify)
+        1    0.000    0.000    0.043    0.043 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+Memory profiling:
+Filename: profiler_heaper.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    13     18.1 MiB     18.1 MiB   @profile
+    14                             def profile_heaper():
+    15     18.1 MiB      0.0 MiB       Heaper.heapSort(arr)
+
+
+-------------------------------------Heapsorter profile:2020-04-15 13:58:15.910860
+10000 elements
+Performance profiling:
+         108631 function calls (15004 primitive calls) in 0.065 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.064    0.064 <string>:1(<module>)
+        1    0.003    0.003    0.064    0.064 heaper.py:18(heapSort)
+108626/14999    0.061    0.000    0.061    0.000 heaper.py:2(heapify)
+        1    0.000    0.000    0.065    0.065 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+Memory profiling:
+Filename: profiler_heaper.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    13     18.9 MiB     18.9 MiB   @profile
+    14                             def profile_heaper():
+    15     18.9 MiB      0.0 MiB       Heaper.heapSort(arr)
+
+

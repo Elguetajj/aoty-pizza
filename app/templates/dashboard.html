@@ -1,12 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
+
+{% if not albums %}
+
+<h2>No logged albums yet.</h2>
+
+{% elif albums %}
 <a href="/dashboard?sort=ascending" class="btn btn-primary">Sort by rating lowest-highest</a>
 <a href="/dashboard?sort=descending" class="btn btn-primary">Sort by rating  highest-lowest</a>
 
 
+{% endif %}
+
+
 <div class="row">
   <div class= "col-sm-3">
-  
+
   {% for album in albums %}
 
   {% set name= album["name"] %}
@@ -16,17 +25,14 @@
   {% set review = album["review"] %}
   {% set date = album["timestamp_string"] %}
 
-
-
-
   <div class="card" style="width: 18rem;">
     <img class="card-img-top" src= {{image}} alt="Card image cap">
     <div class="card-body">
       <h5 class="card-title">{{name}}</h5>
       <p class="card-text">RATING: {{rating}}</p>
       <p class="card-text">LOVED: {{loved}}</p>
-      <p class="card-text">{{review}}p>
-      <p class="card-text">{{timestamp_string}}</p></p>
+      <p class="card-text">{{review}}</p>
+      <p class="card-text">{{timestamp_string}}</p>
 
     </div>
   </div>

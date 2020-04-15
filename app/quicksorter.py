@@ -1,5 +1,4 @@
 class Quicksorter:
-
     @classmethod
     def partition(cls,arr, start, n):
         pivot = arr[start]["rating"]
@@ -33,3 +32,6 @@ class Quicksorter:
         cls.quick_sort(arr, p+1, n)
 
 
+
+
+#based on implementation from: https://stackabuse.com/quicksort-in-python/

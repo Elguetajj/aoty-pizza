@@ -1,0 +1,121 @@
+-------------------------------------Quicksorter profile:2020-04-15 13:52:52.483072
+100 elements
+Performance profiling:
+         251 function calls (87 primitive calls) in 0.000 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.000    0.000 <string>:1(<module>)
+       82    0.000    0.000    0.000    0.000 quicksorter.py:2(partition)
+    165/1    0.000    0.000    0.000    0.000 quicksorter.py:25(quick_sort)
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+Memory Profiling:
+Filename: profiler_quicksorter.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    14     16.4 MiB     16.4 MiB   @profile
+    15                             def profile_quicksorter():
+    16     16.4 MiB      0.1 MiB       Quicksorter.quick_sort(arr,0,len(arr)-1)
+
+
+-------------------------------------Quicksorter profile:2020-04-15 13:53:47.065913
+1000 elements
+Performance profiling:
+         2609 function calls (873 primitive calls) in 0.009 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.009    0.009 <string>:1(<module>)
+      868    0.008    0.000    0.008    0.000 quicksorter.py:2(partition)
+   1737/1    0.001    0.000    0.009    0.009 quicksorter.py:25(quick_sort)
+        1    0.000    0.000    0.009    0.009 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+Error Ocurred: maximum recursion depth exceeded while calling a Python object
+-------------------------------------Quicksorter profile:2020-04-15 13:55:41.524227
+500 elements
+Performance profiling:
+         1343 function calls (451 primitive calls) in 0.003 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.003    0.003 <string>:1(<module>)
+      446    0.002    0.000    0.002    0.000 quicksorter.py:2(partition)
+    893/1    0.000    0.000    0.003    0.003 quicksorter.py:25(quick_sort)
+        1    0.000    0.000    0.003    0.003 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+Memory Profiling:
+Filename: profiler_quicksorter.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    14     16.5 MiB     16.5 MiB   @profile
+    15                             def profile_quicksorter():
+    16     17.0 MiB      0.5 MiB       Quicksorter.quick_sort(arr,0,len(arr)-1)
+
+
+-------------------------------------Quicksorter profile:2020-04-15 13:56:24.660700
+600 elements
+Performance profiling:
+         1598 function calls (536 primitive calls) in 0.003 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.003    0.003 <string>:1(<module>)
+      531    0.003    0.000    0.003    0.000 quicksorter.py:2(partition)
+   1063/1    0.000    0.000    0.003    0.003 quicksorter.py:25(quick_sort)
+        1    0.000    0.000    0.003    0.003 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+Memory Profiling:
+Filename: profiler_quicksorter.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    14     16.7 MiB     16.7 MiB   @profile
+    15                             def profile_quicksorter():
+    16     17.3 MiB      0.6 MiB       Quicksorter.quick_sort(arr,0,len(arr)-1)
+
+
+-------------------------------------Quicksorter profile:2020-04-15 13:57:21.894197
+700 elements
+Performance profiling:
+         1874 function calls (628 primitive calls) in 0.005 seconds
+
+   Ordered by: standard name
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000    0.005    0.005 <string>:1(<module>)
+      623    0.004    0.000    0.004    0.000 quicksorter.py:2(partition)
+   1247/1    0.000    0.000    0.005    0.005 quicksorter.py:25(quick_sort)
+        1    0.000    0.000    0.005    0.005 {built-in method builtins.exec}
+        1    0.000    0.000    0.000    0.000 {built-in method builtins.len}
+        1    0.000    0.000    0.000    0.000 {method 'disable' of '_lsprof.Profiler' objects}
+
+
+Memory Profiling:
+Filename: profiler_quicksorter.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+    14     16.6 MiB     16.6 MiB   @profile
+    15                             def profile_quicksorter():
+    16     17.4 MiB      0.8 MiB       Quicksorter.quick_sort(arr,0,len(arr)-1)
+
+
