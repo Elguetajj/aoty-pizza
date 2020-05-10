@@ -13,8 +13,7 @@
 {% endif %}
 
 
-<div class="row">
-  <div class= "col-sm-3">
+<div class="row"> 
 
   {% for album in albums %}
 
@@ -24,22 +23,20 @@
   {% set loved = album["loved"] %}
   {% set review = album["review"] %}
   {% set date = album["timestamp_string"] %}
+  <div class="col-md-2 " style="margin-bottom:10px;">
+    <div class="card" style="width: 18rem;">
+      <img class="card-img-top" src= {{image}} alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">{{name}}</h5>
+        <p class="card-text">RATING: {{rating}}</p>
+        <p class="card-text">LOVED: {{loved}}</p>
+        <p class="card-text">{{review}}</p>
+        <p class="card-text">{{timestamp_string}}</p>
 
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src= {{image}} alt="Card image cap">
-    <div class="card-body">
-      <h5 class="card-title">{{name}}</h5>
-      <p class="card-text">RATING: {{rating}}</p>
-      <p class="card-text">LOVED: {{loved}}</p>
-      <p class="card-text">{{review}}</p>
-      <p class="card-text">{{timestamp_string}}</p>
-
+      </div>
     </div>
   </div>
-
   {% endfor %}
-
-  </div>
 </div> 
 
 {% endblock %}

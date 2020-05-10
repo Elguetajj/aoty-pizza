@@ -11,17 +11,25 @@ class TestHeap(unittest.TestCase):
         for i in range(1000):
             arr.append({"rating": randint(0,5)})
 
-    def test_sort(self):
+    def test_sort_descending(self):
         arr= []
         self.fill_array(arr)
-        expected  = sorted(arr, key=lambda k: k['rating']) 
+        expected  = sorted(arr, key=lambda k: k['rating'], reverse = True) 
+        Heaper.heapSort(arr,True)
+        self.assertEqual(arr,expected)
+
+    def test_sort_ascending(self):
+        arr= []
+        self.fill_array(arr)
+        expected  = sorted(arr, key=lambda k: k['rating'])
         Heaper.heapSort(arr)
         self.assertEqual(arr,expected)
 
 
+
 if __name__ == '__main__':
-   log_file = './logs/heaper_test_log.txt'
-   with open(log_file, "a+") as f:
+    log_file = './logs/heaper_test_log.txt'
+    with open(log_file, "a+") as f:
         f.write('Heaper_test:'+str(datetime.now()))
         runner = unittest.TextTestRunner(f)
         unittest.main(testRunner=runner)

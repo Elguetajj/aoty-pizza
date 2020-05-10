@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,6 +26,7 @@
     <title> AOTY - pizza 💿🍕 </title>
 
 
+
     <style>
     #wrapper {
     width: 100%;
@@ -34,28 +36,25 @@
     align-items: center;
     justify-content: center;
     }
-    
+
     </style>
     
 </head>
+
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a style="font-size:30px" class="nav-link" href="/dashboard"> AOTY - pizza 💿🍕 <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item ">
-                        <a style="font-size:30px" class="nav-link" href="/albums"> albums <span class="sr-only">(current)</span></a>
-                    </li>
-                </ul>
-            </div>
-    </nav>
-    <div>
-        {% block content %}{% endblock %}
+<div id=wrapper>
+    <div class="card" style="width: 40rem; vertical-align: middle;">
+        <h1>Welcome to AOTY-pizza 🍕💿</h1>
+        <h2>log in to spotify to start rating!</h2>
+        <a href="/auth"  id = "log_button" class="btn btn-primary">Log in to spotify</a>
     </div>
+</div>
+    
 
-
-   
 </body>
+
 </html>
+
+
+
