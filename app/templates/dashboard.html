@@ -6,9 +6,10 @@
 <h2>No logged albums yet.</h2>
 
 {% elif albums %}
-<a href="/dashboard?sort=ascending" class="btn btn-primary">Sort by rating lowest-highest</a>
-<a href="/dashboard?sort=descending" class="btn btn-primary">Sort by rating  highest-lowest</a>
-
+<a href="/dashboard?sort=ascending&key=rating" class="btn btn-primary">Sort by rating lowest-highest</a>
+<a href="/dashboard?sort=descending&key=rating" class="btn btn-primary">Sort by rating  highest-lowest</a>
+<a href="/dashboard?sort=ascending&key=timestamp" class="btn btn-primary">Sort by date lowest-highest</a>
+<a href="/dashboard?sort=descending&key=timestamp" class="btn btn-primary">Sort by date highest-lowest</a>
 
 {% endif %}
 

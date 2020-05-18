@@ -12,7 +12,7 @@ sys.stdout = open('./logs/profiler_heaper_log.txt', 'a+')
 
 @profile
 def profile_heaper():
-    Heaper.heapSort(arr)
+    Heaper.heapSort(arr,"rating")
 
 
 
@@ -23,7 +23,7 @@ try:
     print(f'-------------------------------------Heapsorter profile:{datetime.now()}')
     print(f'{len(arr)} elements')
     print("Performance profiling:")
-    cProfile.run('Heaper.heapSort(arr)')
+    cProfile.run('Heaper.heapSort(arr,"rating")')
     print("Memory profiling:")
     profile_heaper()
 

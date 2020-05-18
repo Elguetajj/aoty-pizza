@@ -19,7 +19,7 @@ token = AuthToken()
 def auth():
     client_id = "26fd557b95a64a33ab3293032169caed"
     redirect_url = "http://localhost:5000/callback"
-    scope = "user-read-recently-played"
+    scope = "user-read-recently-played user-read-private"
     return redirect(f"https://accounts.spotify.com/authorize?client_id={client_id}&response_type=code&redirect_uri={redirect_url}&scope={scope}")
 
 @app.route('/callback')
@@ -35,6 +35,16 @@ def callback():
     print(f"token:{token.access_token}")
     print(f"refresh_token:{token.refresh_token}")
     print(f"expires_in:{token.expires_in}")
+    
+    url = "https://api.spotify.com/v1/me"
+    headers = {"Authorization": f"Bearer {token.access_token}"}
+    r = requests.get(url= url, headers = headers)
+    r = r.json()
+    user_id = r["id"]
+    user_albums.load_albums(user_id)
+    print(user_albums.logged_albums)
+
+
     return render_template("callback.html")
 
 @app.route('/refresh_token')
@@ -65,21 +75,15 @@ user_albums = Albums()
 def home():
     return render_template("home.html")
 
-
-
-
-
-
-
-
 @app.route('/dashboard')
 def dashboard():
+    key = request.args.get("key")
     if request.args.get("sort") == 'ascending':
-        user_albums.sort_ascending()
+        user_albums.sort_ascending(key)
         albums = user_albums.logged_albums
 
     elif request.args.get("sort") == "descending":
-        user_albums.sort_descending()
+        user_albums.sort_descending(key)
         albums = user_albums.logged_albums
 
     else:
@@ -111,7 +115,12 @@ def log():
 def log_entry():
     data = json.loads(request.data)
     print(data)
-    user_albums.logAlbum(data)
+    url = "https://api.spotify.com/v1/me"
+    headers = {"Authorization": f"Bearer {token.access_token}"}
+    r = requests.get(url= url, headers = headers)
+    r = r.json()
+    user_id = r["id"]
+    user_albums.logAlbum(data, user_id)
     return render_template("layout.html")
 
 
