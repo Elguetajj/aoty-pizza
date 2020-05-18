@@ -15,14 +15,14 @@ class TestHeap(unittest.TestCase):
         arr= []
         self.fill_array(arr)
         expected  = sorted(arr, key=lambda k: k['rating'], reverse = True) 
-        Heaper.heapSort(arr,True)
+        Heaper.heapSort(arr,"rating",True)
         self.assertEqual(arr,expected)
 
     def test_sort_ascending(self):
         arr= []
         self.fill_array(arr)
         expected  = sorted(arr, key=lambda k: k['rating'])
-        Heaper.heapSort(arr)
+        Heaper.heapSort(arr, "rating")
         self.assertEqual(arr,expected)
 
 
