@@ -25,7 +25,7 @@ your@console: path/to/aoty-pizza$ docker build --tag whichever-tag-you-want .
 ```
 This command will build and tag an image from the DOCKERFILE contained in this repository. After this run the following:
 ```console
-your@console: path/to/aoty-pizza$ docker run --publish 5000:5000 --detach --name aoty-pizza aoty-pizza:1.0
+your@console: path/to/aoty-pizza$ docker run --publish 5000:5000 --detach --name aoty-pizza whichever-tag-you-want
 ```
 This command should start running a container based on the image you just created!!!
 
